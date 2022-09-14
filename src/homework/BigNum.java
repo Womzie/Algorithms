@@ -6,14 +6,16 @@ import edu.princeton.cs.algs4.*;
 public class BigNum {
     ArrayList<Integer> numbers;
 
+    // Constructor
     BigNum(String num){
         numbers = new ArrayList<>();
-
+        // Turn our string num into an arrayList of integers
         for(int i = 0; i < num.length(); i++){
             int temp = Integer.parseInt(num.substring(i,i+1));
             numbers.add(temp);
         }
-        if(num.length() == 0) {
+        // checks if the string is empty and returns 0
+        if(num.equals("")) {
             numbers.add(0);
         }
     }
@@ -27,20 +29,24 @@ public class BigNum {
         }
         return temp.toString();
     }
-    // currently doesn't work for BigNums of different sizes
+
     public BigNum plus(BigNum b) {
         StringBuilder normal= new StringBuilder();
+        //initialize variables
         int temp = 0;
         int i = this.numbers.size()-1;
-
         int j = b.numbers.size()-1;
         int biggest = Math.max(i,j);
         boolean carry = false;
+
+        // While still in the largest arrayList
         while(biggest >= 0){
             temp = 0;
+            // Allowing addition of BigNums of different sizes
             if(i >= 0)temp += this.numbers.get(i);
             if(j >= 0)temp += b.numbers.get(j);
 
+            // carry the one
             if(carry){
                 temp += 1;
             }
@@ -62,7 +68,6 @@ public class BigNum {
     }
 
     public BigNum times(BigNum b) {
-        // times
         return null;
     }
 }
