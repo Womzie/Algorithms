@@ -36,7 +36,7 @@ public class BigNum {
         int temp = 0;
         int i = this.numbers.size()-1;
         int j = b.numbers.size()-1;
-        int biggest = Math.max(i,j);
+        int biggest = Math.max(i, j);
         boolean carry = false;
 
         // While still in the largest arrayList
@@ -68,6 +68,26 @@ public class BigNum {
     }
 
     public BigNum times(BigNum b) {
-        return null;
+        BigNum result = new BigNum("");
+
+        for(int i = this.numbers.size()-1; i >= 0; i--){
+            for(int j = b.numbers.size()-1; j >= 0; j--){
+                int product = (this.numbers.get(i)) * (b.numbers.get(i));
+                StringBuilder tempResult = new StringBuilder(Integer.toString(product));
+
+                //add the 0s for the other
+                for(int k = 0; k < b.numbers.size()-j-1; k++){
+                    tempResult.append("0");
+                }
+
+                //add the 0s for the self
+                for(int k = 0; k < this.numbers.size()-i-1; k++){
+                    tempResult.append("0");
+                }
+
+                result = result.plus(new BigNum(tempResult.toString()));
+            }
+        }
+        return result;
     }
 }
