@@ -1,7 +1,7 @@
 package homework;
 import java.util.ArrayList;
 import edu.princeton.cs.algs4.*;
-// package BigNum
+// package bignum
 
 public class BigNum {
     ArrayList<Integer> numbers;
