@@ -7,7 +7,7 @@ public class BigNum {
     ArrayList<Integer> numbers;
 
     BigNum(String num){
-        numbers = new ArrayList<Integer>();
+        numbers = new ArrayList<>();
 
         for(int i = 0; i < num.length(); i++){
             int temp = Integer.parseInt(num.substring(i,i+1));
@@ -20,16 +20,16 @@ public class BigNum {
 
     @Override
     public String toString() {
-        String temp = "";
+        StringBuilder temp = new StringBuilder();
 
-        for(int i = 0; i < this.numbers.size(); i++){
-            temp += numbers.get(i);
+        for (Integer number : this.numbers) {
+            temp.append(number);
         }
-        return temp;
+        return temp.toString();
     }
     // currently doesn't work for BigNums of different sizes
     public BigNum plus(BigNum b) {
-        String normal= "";
+        StringBuilder normal= new StringBuilder();
         int temp = 0;
         int i = this.numbers.size()-1;
 
@@ -50,20 +50,19 @@ public class BigNum {
             }
             else{ carry = false;}
 
-            normal = temp + normal;
+            normal.insert(0, temp);
             i--;
             j--;
             biggest--;
         }
         if(carry){
-            normal = temp + normal;
+            normal.insert(0, temp);
         }
-        BigNum c = new BigNum(normal);
-        return c;
+        return new BigNum(normal.toString());
     }
 
     public BigNum times(BigNum b) {
-
+        // times
         return null;
     }
 }
