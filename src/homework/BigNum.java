@@ -1,3 +1,5 @@
+// Team members: Anders, Nuzhat, Katie, Skye
+
 package homework;
 import java.util.ArrayList;
 import edu.princeton.cs.algs4.*;
@@ -68,24 +70,20 @@ public class BigNum {
     }
 
     public BigNum times(BigNum b) {
+        if(b.numbers.size() == 0 || this.numbers.size() == 0) return new BigNum("0");
         BigNum result = new BigNum("");
 
         for(int i = this.numbers.size()-1; i >= 0; i--){
             for(int j = b.numbers.size()-1; j >= 0; j--){
-                int product = (this.numbers.get(i)) * (b.numbers.get(i));
-                StringBuilder tempResult = new StringBuilder(Integer.toString(product));
+                int product = (this.numbers.get(i)) * (b.numbers.get(j));
 
                 //add the 0s for the other
-                for(int k = 0; k < b.numbers.size()-j-1; k++){
-                    tempResult.append("0");
-                }
+                String tempResult = product +
+                        "0".repeat(Math.max(0, b.numbers.size() - j - 1)) +
+                        "0".repeat(Math.max(0, this.numbers.size() - i - 1));
 
-                //add the 0s for the self
-                for(int k = 0; k < this.numbers.size()-i-1; k++){
-                    tempResult.append("0");
-                }
 
-                result = result.plus(new BigNum(tempResult.toString()));
+                result = result.plus(new BigNum(tempResult));
             }
         }
         return result;
