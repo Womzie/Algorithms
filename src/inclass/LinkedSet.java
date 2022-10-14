@@ -1,8 +1,6 @@
 package inclass;
 
 public class LinkedSet<K> implements Set<K> {
-
-
     @Override
     public void add(K key) {
 
