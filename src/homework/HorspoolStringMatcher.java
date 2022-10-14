@@ -29,7 +29,7 @@ public class HorspoolStringMatcher {
         int i = len -1;
         int loc = -1;
         while(i < s.length()){
-            // checks last char of key vs its comparitor
+            // checks last char of key vs its comparator
             if(s.charAt(i) == key.charAt(len-1)){
                 // then go back through and check for every part of key
                 int flag = 0;
