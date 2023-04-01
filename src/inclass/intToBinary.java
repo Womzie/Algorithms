@@ -17,4 +17,7 @@ public class intToBinary {
             d/= 2;
         }
     }
+
+
+
 }

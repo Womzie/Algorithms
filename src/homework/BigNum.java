@@ -1,8 +1,8 @@
 // Team members: Anders, Nuzhat, Katie, Skye
 
 package homework;
+
 import java.util.ArrayList;
-import edu.princeton.cs.algs4.*;
 // package bignum
 
 public class BigNum {

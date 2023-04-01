@@ -35,7 +35,7 @@ public class Fibonacci {
 
        StdOut.println("fib2(2) = " + fib(2));
        StdOut.println("fib2(5) = " + fib(5));
-       StdOut.println("fib2(46) = " + fib(46));
+       StdOut.println("fib2(46) = " + fib(22));
 
     }
 
